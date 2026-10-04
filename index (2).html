@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Customer flow</title><style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+:root{--bg:#FBF3F9;--ink:#1F1B2E;--acc:#8E1A74;--ok:#1E8E5A;--warn:#D98A00;--bad:#C73A3A;--line:#E3E4EE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.5}
+nav{display:flex;gap:6px;align-items:center;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line);flex-wrap:wrap}
+nav b{margin-right:12px}
+nav a{padding:6px 14px;border-radius:999px;color:var(--ink);text-decoration:none;font-size:14px}
+nav a:hover{background:var(--bg)} nav a.on{background:var(--acc);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:28px 24px}
+h1{font-size:30px;margin:0 0 6px} h2{font-size:18px;margin:0 0 12px} p.sub{margin:0 0 24px;color:#5b5670}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+a.card{color:inherit;text-decoration:none} a.card:hover{border-color:var(--acc)}
+.two{display:grid;grid-template-columns:1fr 1.1fr;gap:20px} @media(max-width:800px){.two{grid-template-columns:1fr}}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+input[type=text],input[type=number]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;margin:6px 0} .chk input{accent-color:var(--acc)}
+button{font:inherit;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--acc);background:#fff;color:var(--acc);cursor:pointer}
+button:hover{background:var(--acc);color:#fff}
+.big{font-size:56px;font-weight:800;line-height:1} .pill{display:inline-block;padding:4px 12px;border-radius:999px;color:#fff;font-weight:600;font-size:14px}
+.bar{display:flex;height:16px;border-radius:8px;overflow:hidden;background:var(--line);margin:10px 0}
+.bar i{display:block;height:100%}
+table{width:100%;border-collapse:collapse;font-size:14px} td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left} .r{text-align:right}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+body{background:linear-gradient(#FFF1F7,#F3EEFD) fixed}
+.app{display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:start}@media(max-width:800px){.app{grid-template-columns:1fr}}
+.side b{display:block;margin-bottom:2px}.side small{color:#5b5670;display:block;margin-bottom:14px}
+.side button,.steps button{border:0;border-radius:10px;padding:10px 12px;background:transparent;color:var(--ink);text-align:left}
+.side button{display:block;width:100%;margin-bottom:4px}
+.side button.on,.steps button.on,button.solid{background:var(--acc);color:#fff}button.solid:hover{background:#6e1259}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.steps button{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.stat b{display:block;font-size:26px}.stat span{font-size:13px;color:#5b5670}
+.yel{background:#FFF6DC;border:1px solid #F1D27A;border-radius:10px;padding:12px;margin-bottom:12px}
+.okbox{background:#E7F6EE;border:1px solid var(--ok);border-radius:10px;padding:12px;margin-bottom:12px}
+.errbox{background:#FDECEC;border:1px solid var(--bad);border-radius:10px;padding:12px;margin-bottom:12px}
+.seg{display:flex;gap:8px;margin:8px 0 14px}.seg button{flex:0 0 auto}
+.tl{list-style:none;margin:0;padding:0}.tl li{display:flex;gap:12px;padding:0 0 18px;position:relative}.tl li:before{content:"";width:14px;height:14px;border-radius:50%;background:var(--ok);flex:none;margin-top:4px}.tl li.n:before{background:#fff;border:2px solid #bbb}.tl small{color:#5b5670;display:block}
+.chat{background:#EFE9E1;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;margin-bottom:12px}.bub{background:#fff;border-radius:10px;padding:10px 12px;max-width:80%}.bub.me{background:#DCF8C6;align-self:flex-end}
+.deal{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.deal .pic{height:90px;border-radius:10px;background:#f4e6f0;display:grid;place-items:center;font-size:48px;margin-bottom:10px}.deal.off{opacity:.45}
+.tag{display:inline-block;background:var(--acc);color:#fff;font-size:12px;font-weight:700;border-radius:6px;padding:2px 8px}
+.hero{padding:10px 0 24px}.hero h1{font-size:40px}input[type=text].code{width:160px;font-size:22px;letter-spacing:8px;text-align:center}
+.card{overflow-x:auto}.two.n{grid-template-columns:1fr 2fr}@media(max-width:800px){.two,.two.n{grid-template-columns:1fr}main{padding:16px 12px}}</style></head><body>
+
+<main><h1>Priya's order, step by step</h1><p class="sub">₹20 token, kirana pickup offer, tracking and delivery verification for order MS892341.</p>
+<div class="steps" id="steps"></div><div class="two"><div id="v"></div><div class="card" id="sum"></div></div></main>
+<script>
+const N=['Checkout','WhatsApp offer','Pickup tracking','Delivery verification'];
+const s={i:0,paid:0,wa:'',why:0,ivr:''};const $=i=>document.getElementById(i);
+const go=i=>{s.i=i;draw()};
+const OUT={1:['Rider must re-attempt delivery today.','Token stays on the order and adjusts against COD.'],2:['Pick a new time slot for the next attempt.','Token stays on the order.'],3:['Disputed attempt. The rider is flagged.','Token refunded in full.']};
+const V=[
+()=>`<div class="card"><h2>Checkout</h2><p>Women's Kurti, size M · ₹299 cash on delivery</p><div class="yel"><b>Confirm your order with ₹20</b><br>This ₹20 is adjusted against your COD payment.</div>
+<table><tr><td>Order amount</td><td class="r">₹299</td></tr><tr><td><b>Pay now</b></td><td class="r"><b>₹20</b></td></tr><tr><td>Pay at delivery</td><td class="r">₹279</td></tr></table><br>
+<a href="#" style="color:var(--acc);font-weight:600" onclick="s.why=!s.why;draw();return false">Why am I seeing this?</a>${s.why?'<p>This ₹20 is only a token amount. It is deducted from the final amount you pay, so you pay ₹279 at delivery instead of ₹299. If you return the parcel after receiving it, the ₹20 is refunded.</p>':''}<br><br>
+<button class="solid" onclick="s.paid=1;go(1)">Pay ₹20 and place order</button></div>`,
+()=>`<div class="card"><h2>WhatsApp from Meesho</h2><div class="chat"><div class="bub">Hi Priya! 👋<br>Your order can be picked up at <b>Ramesh General Store</b>, 400 m away.<br>• Arrives by Fri, 2 Aug<br>• Held for 5 days<br>• Get ₹5 off your next order if you pick up from here.</div>${s.wa?`<div class="bub me">${s.wa=='y'?"Yes, I'll pick up (₹5 off)":'Deliver to my door'}</div><div class="bub">${s.wa=='y'?'Done. ₹5 off added to your next order.':'Okay, we will try home delivery.'}</div>`:''}</div>
+${s.wa?'<button class="solid" onclick="go(2)">Continue to tracking</button>':`<button class="solid" onclick="s.wa='y';draw()">Yes, I'll pick up (₹5 off)</button> <button onclick="s.wa='d';draw()">Deliver to my door</button>`}</div>`,
+()=>`<div class="card"><h2>Order #MS892341</h2><ul class="tl">${[['Order confirmed','1 Aug, 10:30 AM',1],['Packed','1 Aug, 2:00 PM',1],['At local hub','2 Aug, 9:00 AM',1],['Arriving at kirana store','Today, 4:00 – 6:00 PM',1],['Ready for pickup','Pickup code: 4821',0]].map(x=>`<li class="${x[2]?'':'n'}"><span><b>${x[0]}</b><small>${x[1]}</small></span></li>`).join('')}</ul><p>We'll remind you twice before the pickup window ends.</p><button onclick="go(3)">See what happens if no one comes</button></div>`,
+()=>`<div class="card"><h2>Automated call: "Our delivery partner reported you were unavailable."</h2><p>Press 1 to re-attempt delivery, 2 to reschedule, 3 if no delivery attempt happened.</p><div class="seg">${[1,2,3].map(k=>`<button class="${s.ivr==k?'solid':''}" onclick="s.ivr=${k};draw()">Press ${k}</button>`).join('')}</div>${s.ivr?`<div class="${s.ivr==3?'okbox':'yel'}"><b>${OUT[s.ivr][0]}</b><br>${OUT[s.ivr][1]}</div>`:''}<p class="sub">A verified refusal, or no pickup after 2 reminders, forfeits the token and the parcel can go to Meesho Nearby.</p></div>`];
+function draw(){$('steps').innerHTML=N.map((n,i)=>`<button class="${i==s.i?'on':''}" onclick="go(${i})">${i+1}. ${n}</button>`).join('');$('v').innerHTML=V[s.i]();
+const tok=s.ivr==3?'Refunded':s.paid?'Paid, adjusts against COD':'Not paid yet';
+$('sum').innerHTML=`<h2>Order summary</h2><p>Women's Kurti · ₹299</p><table><tr><td>₹20 token</td><td class="r"><b>${tok}</b></td></tr><tr><td>Due at pickup or delivery</td><td class="r">${s.ivr==3?'₹299':'₹279'}</td></tr><tr><td>Next-order credit</td><td class="r">${s.wa=='y'?'₹5':'-'}</td></tr></table>`}
+draw();
+</script></body></html>
