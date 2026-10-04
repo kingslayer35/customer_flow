@@ -63,6 +63,8 @@ Use flat white surfaces and fine borders. The payment explanation and delivery c
 
 ## Components
 
+The user-supplied Meesho logo is stored unchanged at `assets/meesho-logo.png` and used in the header and favicon. The shared `.brand-logo` rule in `styles.css` reserves a 44px square on desktop and 40px on phones, with `alt="Meesho"` and preserved image proportions. The adjacent descriptor identifies this prototype.
+
 The foundation in `styles.css` owns buttons, panels, tables, focus, semantic notices, responsive shell, and global scrollbars. Customer-specific rules extend that foundation for the payment block, chat, delivery timeline, summary, and IVR options.
 
 Use native buttons for actions. Selected prototype steps expose `aria-current`; IVR options expose `aria-pressed`. Focus uses a visible navy outline. Feedback stays within the relevant screen. The existing state object, amounts, data arrays, and handlers remain the behavior authority in `index.html`.
